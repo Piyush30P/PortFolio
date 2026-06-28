@@ -159,6 +159,31 @@
     .nav-links a.active { color: var(--cyan); background: var(--cyan-dim); }
     .nav-burger { display: none; background: none; border: none; color: var(--text); font-size: 1.3rem; cursor: pointer; z-index: 501; }
 
+    /* ── NAV RESUME PILL (NEW) ── */
+    .nav-resume-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.85rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--violet);
+      border: 1px solid rgba(155,109,255,0.4);
+      border-radius: 20px;
+      text-decoration: none;
+      background: rgba(155,109,255,0.08);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .nav-resume-pill:hover {
+      background: rgba(155,109,255,0.18);
+      border-color: var(--violet);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(155,109,255,0.25);
+    }
+
     /* ── HERO ── */
     #hero {
       position: relative;
@@ -314,6 +339,18 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 30px rgba(0,212,255,0.35);
     }
+
+    /* ── RESUME BUTTON (NEW) ── */
+    .btn-resume {
+      background: linear-gradient(135deg, var(--violet), #7B3FCF);
+      color: #fff;
+      font-weight: 700;
+    }
+    .btn-resume:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(155,109,255,0.4);
+    }
+
     .btn-outline {
       color: var(--text);
       border: 1px solid var(--border);
@@ -918,6 +955,10 @@
     .c-link.lc:hover { border-color: #FFA116; color: #FFA116; box-shadow: 0 4px 20px rgba(255,161,22,0.12); }
     .c-link.lc::before { background: #FFA116; }
 
+    /* ── RESUME CONTACT LINK (NEW) ── */
+    .c-link.resume:hover { border-color: var(--violet); color: var(--violet); box-shadow: 0 4px 20px rgba(155,109,255,0.18); }
+    .c-link.resume::before { background: var(--violet); }
+
     /* ── FOOTER ── */
     footer {
       position: relative;
@@ -976,6 +1017,7 @@
       .projects-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr 1fr; }
       .projects-header-row { flex-direction: column; align-items: flex-start; }
+      .nav-resume-pill { display: none; }
     }
     @media (max-width: 480px) {
       .hero-name { font-size: 2.7rem; }
@@ -1012,9 +1054,16 @@
     <li><a href="#pubs"      class="nav-a" onclick="closeMob()">Publications</a></li>
     <li><a href="#contact"   class="nav-a" onclick="closeMob()">Contact</a></li>
   </ul>
-  <button class="nav-burger" id="nav-burger" aria-label="Menu">
-    <i class="fa fa-bars" id="burger-ic"></i>
-  </button>
+  <!-- RESUME PILL IN NAV (NEW) -->
+  <div style="display:flex;align-items:center;gap:0.7rem">
+    <a href="https://drive.google.com/file/d/1O4wGnrSNB0ipRF4C36ydJKmer1XPQZiS/view?usp=sharing"
+       target="_blank" rel="noopener" class="nav-resume-pill">
+      <i class="fa fa-file-lines"></i> Resume
+    </a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">
+      <i class="fa fa-bars" id="burger-ic"></i>
+    </button>
+  </div>
 </nav>
 
 <!-- ── HERO ── -->
@@ -1046,6 +1095,11 @@
     <div class="hero-ctas">
       <a href="mailto:pisepiyush39@gmail.com" class="btn btn-primary">
         <i class="fa fa-envelope"></i> Get in Touch
+      </a>
+      <!-- RESUME BUTTON IN HERO (NEW) -->
+      <a href="https://drive.google.com/file/d/1O4wGnrSNB0ipRF4C36ydJKmer1XPQZiS/view?usp=sharing"
+         target="_blank" rel="noopener" class="btn btn-resume">
+        <i class="fa fa-file-lines"></i> View Resume
       </a>
       <a href="https://github.com/Piyush30P" target="_blank" rel="noopener" class="btn btn-outline">
         <i class="fab fa-github"></i> GitHub
@@ -1403,6 +1457,11 @@
     <p class="contact-sub reveal d1">Open to full-time SDE and AI Engineering roles. If you're building something that matters — or want to talk RAG architectures, LangGraph, or agentic systems — I'm in.</p>
     <div class="contact-links reveal d2">
       <a href="mailto:pisepiyush39@gmail.com" class="c-link email"><i class="fa fa-envelope"></i> pisepiyush39@gmail.com</a>
+      <!-- RESUME LINK IN CONTACT (NEW) -->
+      <a href="https://drive.google.com/file/d/1O4wGnrSNB0ipRF4C36ydJKmer1XPQZiS/view?usp=sharing"
+         target="_blank" rel="noopener" class="c-link resume">
+        <i class="fa fa-file-lines"></i> Resume
+      </a>
       <a href="https://www.linkedin.com/in/piyush-pise-73400a264" target="_blank" rel="noopener" class="c-link li"><i class="fab fa-linkedin"></i> LinkedIn</a>
       <a href="https://github.com/Piyush30P" target="_blank" rel="noopener" class="c-link gh"><i class="fab fa-github"></i> GitHub</a>
       <a href="https://leetcode.com/piyush" target="_blank" rel="noopener" class="c-link lc"><i class="fa fa-code"></i> LeetCode</a>
